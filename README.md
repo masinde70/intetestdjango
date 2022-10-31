@@ -1,0 +1,2 @@
+# intetestdjango
+integrifytest

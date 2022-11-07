@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">To Do</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-targ\
         et="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Tog\
         gle navigation">
@@ -26,18 +26,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">To Do</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
-                    </li>
-                    <div>
-  
-                        <h1 onclick="location.href='{% url "index" %}'">Django To-do Lists</h1>
-                       
-                    </div>
+                    
                     {% endif %}
                 </ul>
             </div>

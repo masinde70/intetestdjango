@@ -4,9 +4,11 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-    <h1>This is our to list home page.</h1>
+    <h1>To do list</h1>
     {% if user.is_authenticated %}
+
         <p>Hi {{ user.email }}!</p>
+        <h3>This is our to do list, please click To Do on the bar to create your to do list</h3>
         <p><a href="{% url 'account_logout' %}">Log Out</a></p>
     {% else %}
         <p>You are not logged in</p>

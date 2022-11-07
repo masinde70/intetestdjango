@@ -11,12 +11,13 @@ from .models import ToDoItem, ToDoList
 
 class ListListView(ListView):
     model = ToDoList
-    template_name = "todo_app/index.html"
+    context_object_name = "todo_list"
+    template_name = "todo/index.html"
 
 
 class ItemListView(ListView):
     model = ToDoItem
-    template_name = "todo_app/todo_list.html"
+    template_name = "todo/todo_list.html"
 
     def get_queryset(self):
         return ToDoItem.objects.filter(todo_list_id=self.kwargs["list_id"])

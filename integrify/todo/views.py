@@ -7,12 +7,15 @@ from django.views.generic import (
     DeleteView,
 )
 from .models import ToDoItem, ToDoList
+from .serializers import TodoSerializer
 
 
 class ListListView(ListView):
     model = ToDoList
+    queryset = ToDoList.objects.all()
     context_object_name = "todo_list"
     template_name = "todo/index.html"
+    serializer_class = TodoSerializer
 
 
 class ItemListView(ListView):

@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "allauth", # new
-    "allauth.account", # new
+    "allauth.account", 
+    'rest_framework', # new
 
     # Local
     'accounts.apps.AccountsConfig',#new
@@ -154,3 +155,9 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # django-crispy-forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5" # new
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}

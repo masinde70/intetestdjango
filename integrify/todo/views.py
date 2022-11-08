@@ -21,6 +21,8 @@ class ListListView(ListView):
 class ItemListView(ListView):
     model = ToDoItem
     template_name = "todo/todo_list.html"
+    serializer_class = TodoSerializer
+    queryset = ToDoItem.objects.all()
 
     def get_queryset(self):
         return ToDoItem.objects.filter(todo_list_id=self.kwargs["list_id"])
@@ -34,6 +36,8 @@ class ItemListView(ListView):
 class ListCreate(CreateView):
     model = ToDoList
     fields = ["title"]
+    queryset = ToDoList.objects.all()
+    serializer_class = TodoSerializer
 
     def get_context_data(self):
         context = super().get_context_data()
@@ -49,6 +53,7 @@ class ItemCreate(CreateView):
         "description",
         "due_date",
     ]
+   
 
     def get_initial(self):
         initial_data = super().get_initial()
